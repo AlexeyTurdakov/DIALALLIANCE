@@ -3,6 +3,7 @@
 let btnTimerStart = document.querySelector(".btn-timer-start");
 let btnTimerStop = document.querySelector(".btn-timer-stop");
 let spanTimerOut = document.querySelector(".span-timer-out");
+let btnReset = document.querySelector(".btn-reset");
 let sec = 0;
 let timer;
 
@@ -11,7 +12,6 @@ btnTimerStart.addEventListener("click", () => {
     sec++;
     btnTimerStart.style.display = "none";
     btnTimerStop.style.display = "block";
-    console.log(sec);
   }, 1000);
 });
 
@@ -22,6 +22,12 @@ btnTimerStop.addEventListener("click", () => {
     sec
   )}`;
   sec = 0;
+});
+
+btnReset.addEventListener("click", () => {
+  spanTimerOut.innerHTML = "";
+  btnTimerStart.style.display = "block";
+  btnTimerStop.style.display = "none";
 });
 
 /*Функция вычисления времени измерения*/
